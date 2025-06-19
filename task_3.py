@@ -34,3 +34,12 @@ class BST:
         else:
             return self._search_recursive(node.right, key)
 
+    def sum_all(self):
+        return self._sum_recursive(self.root)
+
+    def _sum_recursive(self, node):
+        if node is None:
+            return 0
+        return node.key + self._sum_recursive(node.left) + self._sum_recursive(node.right)
+
+
